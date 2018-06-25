@@ -8,6 +8,10 @@ import router from './router'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+<<<<<<< HEAD
+=======
+
+>>>>>>> d13d1d717bbfac1c9fccf1070c1992483da53c40
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

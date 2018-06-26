@@ -12,7 +12,7 @@
       <span>确认密码：</span>
       <el-input type="password" v-model="password2" placeholder="请确认密码"></el-input>
     </p>
-    <el-button type="primary" @click="submit">提交</el-button>
+    <el-button type="primary" @click = "submit();registe()">提交</el-button>
   </div>
 </template>
 
@@ -31,6 +31,21 @@ export default {
       if (this.email === '') {
         this.$message.error('记得填写邮箱哦')
       }
+      if (this.password1 !== this.password2) {
+        this.$message.error('密码不一致哦')
+      } else if (this.password1.length < 6) {
+        this.$message.error('密码长度要大于等于6位数才安全')
+      }
+    },
+    registe: function () {
+      this.$http({
+        method: 'post',
+        url: 'https://www.easy-mock.com/mock/5a7f968a64632570965bcc83/api/shopList',
+        data: {
+          email: this.email,
+          password: this.password1
+        }
+      })
     }
   }
 }

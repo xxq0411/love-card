@@ -6,10 +6,12 @@
 
 <script>
 import Register from '@/components/Register'
+import Login from '@/components/Login'
 
 export default {
   components: {
-    Register
+    Register,
+    Login
   },
   name: 'App'
 }

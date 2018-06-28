@@ -13,11 +13,7 @@
       <el-input type="password" v-model="password2" placeholder="请确认密码"></el-input>
     </p>
     <el-button type="primary" @click = "submit">提交</el-button>
-
-    <div class="loginBtn">
-      <router-link to="/login">已有账户</router-link>
-      <router-view></router-view>
-    </div>
+    <router-link to='/' tag=el-button id="backToFirst">返回首页</router-link>
   </div>
 </template>
 

@@ -10,7 +10,9 @@
     </p>
     <el-button type="primary" @click = "entry">登录</el-button>
     <div class="backT0HomePage">
-     <router-link to='/' tag=el-button class="backToFirst">《=首页</router-link>
+      <router-link to='/' class="backToFirst">
+        <i class="el-icon-back">回首页</i>
+      </router-link>
     </div>
   </div>
 </template>
@@ -34,10 +36,11 @@ export default {
       }
     },
     login: function (email, password) {
-      this.$http.post('http://47.75.71.205/api/love/login', {
-        email: this.email,
-        password: this.password
-      })
+      this.$http
+        .post('http://47.75.71.205/api/love/login', {
+          email: this.email,
+          password: this.password
+        })
         .then(function (res) {
           var successMsg = res.data.msg
           alert(successMsg)
@@ -51,21 +54,21 @@ export default {
 }
 </script>
 <style scoped>
-  .login {
-    padding:20px;
-  }
-  .login >p >span {
-    display:inline-block;
-    width:80px;
-  }
-  .el-input {
-    width:30%;
-  }
-  .backToFirst {
-    display: block;
-    text-align: left;
-    font-size: 1px;
-    padding: 5px;
-    margin-left:60vw;
-  }
+.login {
+  padding: 20px;
+}
+.login > p > span {
+  display: inline-block;
+  width: 80px;
+}
+.el-input {
+  width: 30%;
+}
+.backToFirst {
+  display: block;
+  text-align: left;
+  font-size: 1px;
+  padding: 5px;
+  margin-left: 60vw;
+}
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div class="first">
     <h1>欢迎来到爱之卡！</h1>
-    <router-link to="/first"></router-link>
     <router-link to="/register" tag=el-button>注册账户</router-link>
     <router-link to="/login" tag=el-button>已有账户</router-link>
   </div>

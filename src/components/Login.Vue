@@ -17,12 +17,14 @@
   </div>
 </template>
 <script>
+
 export default {
   name: 'login',
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      id: ''
     }
   },
   methods: {
@@ -42,10 +44,12 @@ export default {
           password: this.password
         })
         .then(function (res) {
-          var successMsg = res.data.msg
-          alert(successMsg)
-          console.log(res)
-        })
+          if (res.data.code === 0) {
+            this.id = res.data.id
+            this.$router.push({path: '/homepage'})
+            console.log(res.data.id)
+          }
+        }.bind(this))
         .catch(function (error) {
           console.log(error)
         })

@@ -57,9 +57,11 @@ export default {
         sex
       })
         .then(function (res) {
-          var msg = res.data.msg
-          alert(msg)
-        })
+          console.log(res)
+          if (res.data.code === 0) {
+            this.$router.push({path: '/homepage'})
+          }
+        }.bind(this))
         .catch(function (error) {
           console.log(error)
         })

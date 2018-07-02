@@ -1,7 +1,7 @@
 <template>
   <div class="homepage">
         <header>
-            <h1 @click='changeUserInfor'>Hello {{userId}}</h1>
+            <h1>Hello {{userName}}</h1>
         </header>
     </div>
 </template>
@@ -11,7 +11,11 @@ export default {
   name: 'homepage',
   data () {
     return {
-      userId: '小可爱'
+    }
+  },
+  computed: {
+    userName () {
+      return this.$store.state.user.data.userName
     }
   }
 }

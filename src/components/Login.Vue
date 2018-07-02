@@ -23,8 +23,7 @@ export default {
   data () {
     return {
       email: '',
-      password: '',
-      id: ''
+      password: ''
     }
   },
   methods: {
@@ -38,6 +37,7 @@ export default {
       }
     },
     login: function (email, password) {
+      const _this = this
       this.$http
         .post('http://47.75.71.205/api/love/login', {
           email: this.email,
@@ -45,11 +45,10 @@ export default {
         })
         .then(function (res) {
           if (res.data.code === 0) {
-            this.id = res.data.id
-            this.$router.push({path: '/homepage'})
-            console.log(res.data.id)
+            _this.$store.commit('updateUser', res.data)
+            _this.$router.push({path: '/homepage'})
           }
-        }.bind(this))
+        })
         .catch(function (error) {
           console.log(error)
         })

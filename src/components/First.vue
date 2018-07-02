@@ -1,6 +1,6 @@
 <template>
   <div class="first">
-    <h1>欢迎来到爱之卡！</h1>
+    <h1>欢迎来到{{$store.state.appName}}</h1>
     <router-link to="/register" tag=el-button>注册账户</router-link>
     <router-link to="/login" tag=el-button>已有账户</router-link>
   </div>
@@ -11,6 +11,11 @@ export default {
   name: 'First',
   data () {
     return {}
+  },
+  methods: {
+    change () {
+      this.$store.commit('changeAppName', '徐菜花')
+    }
   }
   // 监听路径变化，未成功
   // beforeRouteUpdate (to, from, next) {

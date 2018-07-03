@@ -45,8 +45,9 @@ export default {
         })
         .then(function (res) {
           if (res.data.code === 0) {
-            _this.$store.commit('updateUser', res.data)
+            _this.$store.commit('updateUser', res.data.data)
             _this.$router.push({path: '/homepage'})
+            localStorage.setItem('token', res.data.token)
           }
         })
         .catch(function (error) {

@@ -12,7 +12,6 @@ export default new Vuex.Store({
       state.appName = '爱之卡！' + name
     },
     updateUser (state, userInfo) {
-      console.log(userInfo)
       state.user = userInfo
     }
   }

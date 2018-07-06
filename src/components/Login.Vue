@@ -37,6 +37,7 @@ export default {
       }
     },
     login: function (email, password) {
+      // 注意声明this的位置
       const _this = this
       this.$http
         .post('http://47.75.71.205/api/love/login', {
@@ -48,6 +49,7 @@ export default {
             _this.$store.commit('updateUser', res.data.data)
             _this.$router.push({path: '/homepage'})
             localStorage.setItem('token', res.data.token)
+            console.log(res.data.data)
           }
         })
         .catch(function (error) {

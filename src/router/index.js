@@ -4,6 +4,8 @@ import Register from '@/components/Register'
 import Login from '@/components/Login'
 import First from '@/components/First'
 import Homepage from '@/components/Homepage'
+import ChangeInfo from '@/components/ChangeInfo'
+import Creat from '@/components/Card/Creat'
 
 Vue.use(Router)
 
@@ -28,6 +30,16 @@ export default new Router({
       path: '/homepage',
       name: 'Homepage',
       component: Homepage
+    },
+    {
+      path: '/changeInfo',
+      name: 'ChangeInfo',
+      component: ChangeInfo
+    },
+    {
+      path: '/creat',
+      name: 'Crate',
+      component: Creat
     }
   ]
 })

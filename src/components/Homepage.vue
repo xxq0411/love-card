@@ -1,31 +1,37 @@
 <template>
   <div class="homepage">
-    <el-row :gutter="20">
-      <el-col :span="19">
-        <h1 class="greet">Hello {{userName}}</h1>
-      </el-col>
-      <el-col :span="5">
-        <router-link to="/changeInfo">修改个人信息</router-link>
-      </el-col>
-    </el-row>
-  <el-col :span="12">
-    <h5>卡片库</h5>
-    <el-menu class="el-menu-vertical-demo">
-      <el-menu-item index="1">
-        <span slot="title"><router-link to="/creat" tag="li">新建卡片</router-link></span>
-      </el-menu-item>
-      <el-menu-item index="2">
-        <span slot="title">派发卡片</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <span slot="title">已有卡片</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <span slot="title">使用卡片</span>
-      </el-menu-item>
-    </el-menu>
-  </el-col>
-  <router-view></router-view>
+    <el-container>
+      <el-aside width="200px">
+        <el-col :span="12" class="el-col">
+          <h5>卡片库</h5>
+          <el-menu class="el-menu-vertical-demo">
+            <el-menu-item index="1">
+              <span slot="title"><router-link to="/homepage/creat" tag="li">新建卡片</router-link></span>
+            </el-menu-item>
+            <el-menu-item index="2">
+              <span slot="title"><router-link to="/homepage/dispatch" tag="li">派发卡片</router-link></span>
+            </el-menu-item>
+            <el-menu-item index="3">
+              <span slot="title"><router-link to="/homepage/own" tag="li">已有卡片</router-link></span>
+            </el-menu-item>
+            <el-menu-item index="4">
+              <span slot="title"><router-link to="/homepage/use" tag="li">使用卡片</router-link></span>
+            </el-menu-item>
+          </el-menu>
+        </el-col>
+      </el-aside>
+      <el-container>
+        <el-header>
+          <h1 class="greet">Hello {{userName}}</h1>
+          <router-link to="/changeInfo" tag="p">
+            <i class="el-icon-arrow-right">  修改个人信息</i>
+          </router-link>
+        </el-header>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
@@ -43,3 +49,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.el-col {
+  width: 100%
+}
+.el-icon-arrow-right {
+  font-size: 8px;
+  color: rgba(131, 131, 253, 0.685);
+  margin-left: 65vw;
+  cursor: pointer;
+}
+</style>

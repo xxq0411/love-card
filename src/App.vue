@@ -23,7 +23,7 @@ export default {
             _this.$store.commit('updateUser', res.data.data[0])
           } else {
             _this.$message.error('用户登录信息过期咯')
-            _this.$router.push('login')
+            _this.$router.push('/')
           }
         })
     }

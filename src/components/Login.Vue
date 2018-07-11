@@ -16,8 +16,8 @@
     </div>
   </div>
 </template>
-<script>
 
+<script>
 export default {
   name: 'login',
   data () {

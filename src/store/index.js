@@ -4,7 +4,9 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
-    user: {},
+    user: {
+      gender: ''
+    },
     appName: '爱之卡'
   },
   mutations: {
@@ -13,6 +15,9 @@ export default new Vuex.Store({
     },
     updateUser (state, userInfo) {
       state.user = userInfo
+    },
+    updateUserGender (state, value) {
+      state.user.gender = value
     }
   }
 })

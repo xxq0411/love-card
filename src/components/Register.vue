@@ -6,10 +6,10 @@
     </div>
     <div>
       <span>雌雄：</span>
-      <div class="sex">
-        <el-radio v-model="sex" label="0" border>雌性</el-radio>
-        <el-radio v-model="sex" label="1" border>雄性</el-radio>
-      </div>
+      <el-radio-group v-model="gender" class="sex">
+        <el-radio label="1" border>雌性</el-radio>
+        <el-radio label="0" border>雄性</el-radio>
+      </el-radio-group>
     </div>
     <div>
       <span>密码：</span>
@@ -32,7 +32,7 @@ export default {
   data () {
     return {
       email: '',
-      sex: '0',
+      gender: '0',
       password: '',
       password2: ''
     }
@@ -59,7 +59,7 @@ export default {
         .then(function (res) {
           console.log(res)
           if (res.data.code === 0) {
-            this.$router.push({path: '/homepage'})
+            this.$router.push({path: '/login'})
           }
         }.bind(this))
         .catch(function (error) {

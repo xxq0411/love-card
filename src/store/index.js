@@ -5,7 +5,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: {
-      gender: ''
+      gender: 1,
+      userName: '',
+      phone: '',
+      address: '',
+      email: ''
     },
     appName: '爱之卡'
   },
@@ -16,7 +20,19 @@ export default new Vuex.Store({
     updateUser (state, userInfo) {
       state.user = userInfo
     },
-    updateUserGender (state, value) {
+    updateEmail (state, value) {
+      state.user.email = value
+    },
+    updateUserName (state, value) {
+      state.user.userName = value
+    },
+    updatePhone (state, value) {
+      state.user.phone = value
+    },
+    updateAddress (state, value) {
+      state.user.address = value
+    },
+    updateGender (state, value) {
       state.user.gender = value
     }
   }

@@ -5,26 +5,26 @@
         <el-form ref="form">
           <el-form-item>
             <span class="label">昵称：</span>
-            <el-input :placeholder="userName" v-model="nickName"></el-input>
+            <el-input v-model="userName"></el-input>
           </el-form-item>
           <el-form-item>
             <span class="label">性别：</span>
             <el-radio-group v-model="gender">
-              <el-radio label="0">雄性</el-radio>
-              <el-radio label="1">雌性</el-radio>
+              <el-radio :label="0">雄性</el-radio>
+              <el-radio :label="1">雌性</el-radio>
             </el-radio-group>
           </el-form-item>
           <el-form-item>
             <span class="label">住址：</span>
-            <el-input :placeholder="address1" v-model="address"></el-input>
+            <el-input v-model="address"></el-input>
           </el-form-item>
           <el-form-item>
             <span class="label">邮箱：</span>
-            <el-input :placeholder="email1" v-model="email"></el-input>
+            <el-input v-model="email"></el-input>
           </el-form-item>
           <el-form-item>
             <span class="label">手机号码：</span>
-            <el-input :placeholder="phone1" v-model="phone"></el-input>
+            <el-input v-model="phone"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="onSubmit">立即创建</el-button>
@@ -43,34 +43,48 @@
 export default {
   data () {
     return {
-      nickName: '',
-      address: '',
-      email: '',
-      phone: ''
-      // TODO: 性别实时更新
     }
   },
   computed: {
-    userName () {
-      return this.$store.state.user.userName
-    },
-    address1 () {
-      return this.$store.state.user.address
-    },
-    phone1 () {
-      return this.$store.state.user.phone
-    },
-    email1 () {
-      return this.$store.state.user.email
+    userName: {
+      get () {
+        return this.$store.state.user.userName
+      },
+      set (value) {
+        this.$store.commit('updateUserName', value)
+      }
     },
     gender: {
       get () {
-        return this.$store.state.user.gender.toString()
+        return this.$store.state.user.gender
       },
       set (value) {
-        this.$store.commit('updateUserGender', value)
+        this.$store.commit('updateGender', value)
       }
-
+    },
+    address: {
+      get () {
+        return this.$store.state.user.address
+      },
+      set (value) {
+        this.$store.commit('updateAddress', value)
+      }
+    },
+    phone: {
+      get () {
+        return this.$store.state.user.phone
+      },
+      set (value) {
+        this.$store.commit('updatePhone', value)
+      }
+    },
+    email: {
+      get () {
+        return this.$store.state.user.email
+      },
+      set (value) {
+        this.$store.commit('updateEmail', value)
+      }
     }
   },
   methods: {
@@ -78,11 +92,11 @@ export default {
       const _this = this
       this.$http
         .post('http://47.75.71.205/api/love/updateUser', {
-          userName: this.nickName,
+          userName: this.userName,
           address: this.address,
           phone: this.phone,
-          email: this.email,
-          gender: this.gender
+          gender: this.gender,
+          email: this.email
         }, {
           headers: {'token': localStorage.getItem('token')
           }
@@ -105,7 +119,6 @@ export default {
         .then(function (res) {
           if (res.data.code === 0) {
             _this.$store.commit('updateUser', res.data.data[0])
-            console.log(res)
           } else {
             _this.$message.error('用户登录信息过期咯')
             _this.$router.push('/')

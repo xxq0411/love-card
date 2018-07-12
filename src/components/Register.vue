@@ -7,8 +7,8 @@
     <div>
       <span>雌雄：</span>
       <el-radio-group v-model="gender" class="sex">
-        <el-radio label="1" border>雌性</el-radio>
-        <el-radio label="0" border>雄性</el-radio>
+        <el-radio :label="1" border>雌性</el-radio>
+        <el-radio :label="0" border>雄性</el-radio>
       </el-radio-group>
     </div>
     <div>
@@ -32,7 +32,7 @@ export default {
   data () {
     return {
       email: '',
-      gender: '0',
+      gender: 0,
       password: '',
       password2: ''
     }
@@ -50,11 +50,11 @@ export default {
       }
     },
     registe: function () {
-      const {email, password, sex} = this
+      const {email, password, gender} = this
       this.$http.post('http://47.75.71.205/api/love/registry', {
         email,
         password,
-        sex
+        gender
       })
         .then(function (res) {
           console.log(res)

@@ -11,6 +11,7 @@ export default new Vuex.Store({
       address: '',
       email: ''
     },
+    card: [],
     appName: '爱之卡'
   },
   mutations: {
@@ -19,6 +20,9 @@ export default new Vuex.Store({
     },
     updateUser (state, userInfo) {
       state.user = userInfo
+    },
+    updateCard (state, allCard) {
+      state.card = allCard
     },
     updateEmail (state, value) {
       state.user.email = value

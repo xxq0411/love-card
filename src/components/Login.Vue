@@ -36,7 +36,7 @@ export default {
         this.login()
       }
     },
-    login: function (email, password) {
+    login: function () {
       // 注意声明this的位置
       const _this = this
       this.$http

@@ -19,10 +19,6 @@
             <el-input v-model="address"></el-input>
           </el-form-item>
           <el-form-item>
-            <span class="label">邮箱：</span>
-            <el-input v-model="email"></el-input>
-          </el-form-item>
-          <el-form-item>
             <span class="label">手机号码：</span>
             <el-input v-model="phone"></el-input>
           </el-form-item>
@@ -77,14 +73,6 @@ export default {
       set (value) {
         this.$store.commit('updatePhone', value)
       }
-    },
-    email: {
-      get () {
-        return this.$store.state.user.email
-      },
-      set (value) {
-        this.$store.commit('updateEmail', value)
-      }
     }
   },
   methods: {
@@ -95,8 +83,7 @@ export default {
           userName: this.userName,
           address: this.address,
           phone: this.phone,
-          gender: this.gender,
-          email: this.email
+          gender: this.gender
         }, {
           headers: {'token': localStorage.getItem('token')
           }

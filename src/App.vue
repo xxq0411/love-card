@@ -26,6 +26,14 @@ export default {
             _this.$router.push('/')
           }
         })
+        // 获取卡片
+      this.$http.get('http://47.75.71.205/api/love/cardModelList', {
+        headers: {'token': localStorage.getItem('token')}
+      })
+        .then(function (res) {
+          let cards = res.data.data.filter(card => card.drop === 0)
+          _this.$store.commit('updateCard', cards)
+        })
     }
   }
 }

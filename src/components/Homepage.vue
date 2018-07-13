@@ -39,6 +39,7 @@
 
 <script>
 export default {
+// TODO: 增加主页的内容
   name: 'homepage',
   data () {
     return {
@@ -57,8 +58,8 @@ export default {
   width: 100%
 }
 .el-icon-arrow-right {
-  font-size: 10px;
-  color:#82bcff;
+  font-size: 20px;
+  color:#409eff;
   margin-left: 35vw;
   cursor: pointer;
 }

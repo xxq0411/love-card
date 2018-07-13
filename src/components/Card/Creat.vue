@@ -33,18 +33,27 @@ export default {
         }
       })
         .then(function (res) {
-          _this.$message('创建成功！')
-          _this.updateOwnCard()
+          if (res.data.code === 0) {
+            _this.$message(res.data.msg)
+            _this.update()
+          } else {
+            _this.$message.error(res.data.msg)
+          }
         })
+        .then(
+          _this.creatCardName = '',
+          _this.creatcardDiscribe = ''
+        )
     },
-    updateOwnCard () {
+    update () {
       const _this = this
+      // 获取卡片
       this.$http.get('http://47.75.71.205/api/love/cardModelList', {
         headers: {'token': localStorage.getItem('token')}
       })
         .then(function (res) {
-          console.log(res)
-          _this.$store.commit('updateCard', res.data.data)
+          let cards = res.data.data.filter(card => card.drop === 0)
+          _this.$store.commit('updateCard', cards)
         })
     }
   }

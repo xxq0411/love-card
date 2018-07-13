@@ -39,6 +39,7 @@ export default {
     login: function () {
       // 注意声明this的位置
       const _this = this
+      // 登录并返回用户信息
       this.$http
         .post('http://47.75.71.205/api/love/login', {
           email: this.email,
@@ -54,6 +55,14 @@ export default {
         })
         .catch(function (error) {
           console.log(error)
+        })
+        // 获取卡片
+      this.$http.get('http://47.75.71.205/api/love/cardModelList', {
+        headers: {'token': localStorage.getItem('token')}
+      })
+        .then(function (res) {
+          let cards = res.data.data.filter(card => card.drop === 0)
+          _this.$store.commit('updateCard', cards)
         })
     }
   }

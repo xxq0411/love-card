@@ -23,8 +23,8 @@
             <el-input v-model="phone"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="onSubmit">立即创建</el-button>
-            <el-button>取消</el-button>
+            <el-button type="primary" @click="onSubmit">确认</el-button>
+            <el-button @click="cancel">取消</el-button>
           </el-form-item>
         </el-form>
       </el-form>
@@ -111,6 +111,9 @@ export default {
             _this.$router.push('/')
           }
         })
+    },
+    cancel () {
+      this.$router.push({path: 'homepage'})
     }
   }
 }

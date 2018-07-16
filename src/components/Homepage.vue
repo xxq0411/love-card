@@ -39,7 +39,6 @@
 
 <script>
 export default {
-// TODO: 增加主页的内容
   name: 'homepage',
   data () {
     return {

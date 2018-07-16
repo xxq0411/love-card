@@ -12,11 +12,11 @@ export default new Vuex.Store({
       email: ''
     },
     card: [],
-    appName: '爱之卡'
+    appName: '小奴隶卡片管理'
   },
   mutations: {
     changeAppName (state, name) {
-      state.appName = '爱之卡！' + name
+      state.appName = '小奴隶卡片管理' + name
     },
     updateUser (state, userInfo) {
       state.user = userInfo

@@ -99,3 +99,9 @@ export default {
     text-align:left;
   }
 </style>
+
+<style>
+.el-input.is-active .el-input__inner, .el-input__inner:focus {
+  border-color: #fff;
+}
+</style>

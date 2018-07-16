@@ -50,19 +50,23 @@ export default {
             _this.$store.commit('updateUser', res.data.data)
             _this.$router.push({path: '/homepage'})
             localStorage.setItem('token', res.data.token)
-            console.log(res.data.data)
+            _this.getCards()
           }
         })
         .catch(function (error) {
           console.log(error)
         })
-        // 获取卡片
+    },
+    getCards () {
+      const _this = this
+      // 获取卡片
       this.$http.get('http://47.75.71.205/api/love/cardModelList', {
         headers: {'token': localStorage.getItem('token')}
       })
         .then(function (res) {
           let cards = res.data.data.filter(card => card.drop === 0)
           _this.$store.commit('updateCard', cards)
+          console.log(1)
         })
     }
   }

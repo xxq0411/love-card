@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 body {
   background-color:rgb(245, 245, 220)
 }
@@ -36,7 +36,6 @@ body {
   font-size:1vw;
   width:5vw;
   height: 5vw;
-  background-color: #DBF5E8;
   margin: 2vw
 }
 footer {

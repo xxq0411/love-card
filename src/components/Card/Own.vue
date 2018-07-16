@@ -4,7 +4,7 @@
     <el-card v-for="card in cards" :key="card.id" class="box-card">
       <div slot="header">
         <span class="cardName">卡片名称:{{card.name}}</span>
-        <el-button style="float: right; padding: 3px 0" type="text" @click="ConfirmIfDel(card.id)">删除</el-button>
+        <el-button style="float: right; padding: 0" type="text" @click="ConfirmIfDel(card.id)">删除</el-button>
       </div>
       <div class="text item">
         {{'列表内容: ' + card.msg }}

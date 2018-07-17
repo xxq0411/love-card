@@ -22,12 +22,11 @@ export default {
     }
   }
 }
+// TODO: 改背景图片 思路：在入口文件处监听路由变化（watch + computed），改掉body的背景图片 2：直接计算出class名 放在body上，根据路由计算class值
+// 图片等静态资源放在static里统一管理
 </script>
 
 <style scoped>
-body {
-  background-color:rgb(245, 245, 220)
-}
 .appName {
   font-size: 3vw;
 }

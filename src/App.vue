@@ -40,6 +40,9 @@ export default {
 </script>
 
 <style>
+body {
+  /* background-image: url("bcakground.jpg") */
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

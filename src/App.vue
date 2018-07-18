@@ -9,10 +9,15 @@
 export default {
   components: {
   },
-  // computed: {
-  //   bodyClassName () {
-  //   }
-  // },
+  computed: {
+    bodyClassName () {
+      if (this.$store.state.user.gender === 1) {
+        return ('pink')
+      } else {
+        return ('blue')
+      }
+    }
+  },
   name: 'App',
   mounted () {
     if (localStorage.getItem('token')) {
@@ -25,6 +30,7 @@ export default {
           // TODO: 需要徐菜花调整token过期时间为1分钟，有利于测试
           if (res.data.code === 0) {
             _this.$store.commit('updateUser', res.data.data[0])
+            _this.addBodyClassName1(_this.$route.path)
           } else {
             _this.$message.error('用户登录信息过期咯')
             _this.$router.push('/')
@@ -40,20 +46,20 @@ export default {
         })
     }
   },
+  methods: {
+    addBodyClassName1 (routePath) {
+      if (routePath === '/') {
+      } else if (routePath === '/login') {
+      } else if (routePath === '/register') {
+      } else {
+        let body = document.getElementsByTagName('body')[0]
+        body.setAttribute('class', this.bodyClassName)
+      }
+    }
+  },
   watch: {
     '$route' (to, from) {
-      if (to.path === '/') {
-        console.log(1)
-      } else if (to.path === '/login') {
-        console.log(2)
-      } else if (to.path === '/register') {
-        console.log(3)
-      } else {
-        this.bodyClassName = 'pink'
-        let body = document.getElementsByTagName('body')[0]
-        console.log(body)
-        body.setAttribute('class', 'pink')
-      }
+      this.addBodyClassName1(to.path)
     }
   }
 }
@@ -68,7 +74,7 @@ body {
 .pink {
   background: #fbbebb
 }
-.bule {
+.blue {
   background: #c5e5e0
 }
 #app {

@@ -57,8 +57,8 @@ export default {
   width: 100%
 }
 .el-icon-arrow-right {
-  font-size: 20px;
-  color:#409eff;
+  font-size: 1vw;
+  color:#FF4D00;
   margin-left: 35vw;
   cursor: pointer;
 }

@@ -9,6 +9,10 @@
 export default {
   components: {
   },
+  // computed: {
+  //   bodyClassName () {
+  //   }
+  // },
   name: 'App',
   mounted () {
     if (localStorage.getItem('token')) {
@@ -35,13 +39,37 @@ export default {
           _this.$store.commit('updateCard', cards)
         })
     }
+  },
+  watch: {
+    '$route' (to, from) {
+      if (to.path === '/') {
+        console.log(1)
+      } else if (to.path === '/login') {
+        console.log(2)
+      } else if (to.path === '/register') {
+        console.log(3)
+      } else {
+        this.bodyClassName = 'pink'
+        let body = document.getElementsByTagName('body')[0]
+        console.log(body)
+        body.setAttribute('class', 'pink')
+      }
+    }
   }
 }
 </script>
 
 <style>
 body {
-  /* background-image: url("bcakground.jpg") */
+  background-image: url(../static/background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%
+}
+.pink {
+  background: #fbbebb
+}
+.bule {
+  background: #c5e5e0
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

@@ -131,4 +131,7 @@ export default {
   display:inline-block;
   width:80px
 }
+.el-icon-back {
+  color: #FF4D00
+}
 </style>

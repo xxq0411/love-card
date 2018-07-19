@@ -27,7 +27,12 @@ export default {
 </script>
 
 <style scoped>
+  @font-face {
+    font-family: 'lixuke';
+    src: url(/static/font/lixuke.ttf) format('truetype');
+  }
 .appName {
+  font-family: 'lixuke';
   font-size: 3vw;
 }
 .el-button {

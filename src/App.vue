@@ -49,8 +49,14 @@ export default {
   methods: {
     addBodyClassName1 (routePath) {
       if (routePath === '/') {
+        let body = document.getElementsByTagName('body')[0]
+        body.classList.remove('blue')
       } else if (routePath === '/login') {
+        let body = document.getElementsByTagName('body')[0]
+        body.setAttribute('class', 'blue')
       } else if (routePath === '/register') {
+        let body = document.getElementsByTagName('body')[0]
+        body.setAttribute('class', 'blue')
       } else {
         let body = document.getElementsByTagName('body')[0]
         body.setAttribute('class', this.bodyClassName)

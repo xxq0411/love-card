@@ -1,18 +1,26 @@
 <template>
   <div class="login">
-    <p>
-      <span>邮箱：</span>
-      <el-input v-model="email" placeholder="请输入注册邮箱"></el-input>
-    </p>
-    <p>
-      <span>密码：</span>
-      <el-input type="password" v-model="password" placeholder="请输入密码"></el-input>
-    </p>
-    <el-button type="primary" @click = "entry">登录</el-button>
-    <div class="backT0HomePage">
-      <router-link to='/' class="backToFirst">
-        <i class="el-icon-back">回首页</i>
-      </router-link>
+    <div class="from">
+      <div class="header">
+        <span class="el-icon-edit"></span>
+        <span>登录页面</span>
+      </div>
+      <p>
+        <span>邮箱：</span>
+        <el-input v-model="email" placeholder="请输入注册邮箱"></el-input>
+      </p>
+      <p>
+        <span>密码：</span>
+        <el-input type="password" v-model="password" placeholder="请输入密码"></el-input>
+      </p>
+      <div class="entryBtn">
+        <el-button type="primary" @click = "entry">点我起飞！</el-button>
+      </div>
+      <div class="backT0HomePage">
+        <router-link to='/register' class="backToRegiser">
+          <i class="el-icon-arrow-left">~没账号点这里~</i>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -73,21 +81,52 @@ export default {
 }
 </script>
 <style scoped>
+@font-face {
+  font-family: 'lixuke';
+  src: url(/static/font/lixuke.ttf) format('truetype');
+}
 .login {
   padding: 20px;
 }
-.login > p > span {
-  display: inline-block;
-  width: 80px;
+.from {
+  margin:0 auto;
+  width: 30vw;
+  height:60vh;
+  background: #fbbebb;
+  border-radius: 20px;
+  text-align: left
+}
+.login > div> p > span {
+  font-family: 'lixuke';
+  font-size: 2vw;
+  display: block;
+  width: 25vw;
+  margin: 0 0 0 2.25vw;
+}
+.login > div> p:first-child >span {
+  padding-top: 2.25vw
 }
 .el-input {
-  width: 30%;
+  width: 25vw;
+  margin: 0 0 0 2.25vw;
 }
-.backToFirst {
+.backToRegiser {
+  font-family: 'lixuke';
   display: block;
   text-align: left;
-  font-size: 1px;
-  padding: 5px;
-  margin-left: 60vw;
+  font-size: 1.6vh;
+  color: #ff4d00;
+  text-align: right;
+  padding:2.5vw;
+}
+.header {
+  font-family: 'lixuke';
+  text-align: center;
+  padding-top:2.25vw;
+  font-size:2vw;
+}
+.entryBtn {
+  text-align: center;
+  padding-top: 2.25vw;
 }
 </style>

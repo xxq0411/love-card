@@ -1,28 +1,36 @@
 <template>
   <div class="register">
-    <div>
-      <span>邮箱：</span>
-      <el-input v-model="email" placeholder="请输入邮箱"></el-input>
-    </div>
-    <div>
-      <span>雌雄：</span>
-      <el-radio-group v-model="gender" class="sex">
-        <el-radio :label="1" border>雌性</el-radio>
-        <el-radio :label="0" border>雄性</el-radio>
-      </el-radio-group>
-    </div>
-    <div>
-      <span>密码：</span>
-      <el-input type="password" v-model="password" placeholder="请输入密码"></el-input>
-    </div>
-    <div>
-      <span>确认密码：</span>
-      <el-input type="password" v-model="password2" placeholder="请确认密码"></el-input>
-    </div>
-    <el-button type="primary" @click = "submit">提交</el-button>
-     <router-link to='/' class="backToFirst">
-      <i class="el-icon-back">回首页</i>
-     </router-link>
+    <div class="from">
+      <p class="header">
+        <span class="el-icon-edit"></span>
+        <span>注册页面</span>
+      </p>
+      <div>
+        <span>邮箱：</span>
+        <el-input v-model="email" placeholder="请输入邮箱"></el-input>
+      </div>
+      <div>
+        <span>雌雄：</span>
+        <el-radio-group v-model="gender" class="sex">
+          <el-radio :label="1" border>雌性</el-radio>
+          <el-radio :label="0" border>雄性</el-radio>
+        </el-radio-group>
+      </div>
+      <div>
+        <span>密码：</span>
+        <el-input type="password" v-model="password" placeholder="请输入密码"></el-input>
+      </div>
+      <div>
+        <span>确认密码：</span>
+        <el-input type="password" v-model="password2" placeholder="请确认密码"></el-input>
+      </div>
+      <div class="entryBtn">
+        <el-button type="primary" @click = "submit">点我起飞！</el-button>
+      </div>
+      <router-link to='/login' class="backToLogin">
+          <i class="el-icon-arrow-left">~有账号点这里~</i>
+      </router-link>
+     </div>
   </div>
 </template>
 
@@ -70,33 +78,65 @@ export default {
 }
 </script>
 <style scoped>
+  .from {
+    margin:0 auto;
+    width: 30vw;
+    height:75vh;
+    background: #fbbebb;
+    border-radius: 20px;
+    text-align: left
+  }
   .register {
     padding:20px;
   }
-  .register >div {
-    padding:5px;
-  }
-  .register >div >span {
-    display:inline-block;
-    width:80px;
+  .register >div >div >span {
+  font-family: 'lixuke';
+  font-size: 2vw;
+  display: block;
+  width: 25vw;
+  margin: 0 0 0 2.25vw;
   }
   .el-input {
-    width:30%
+  width: 25vw;
+  margin: 0 0 0 2.25vw;
   }
-  .backToFirst {
+  .backToLogin {
+    font-family: 'lixuke';
     display: block;
     text-align: left;
-    font-size: 1px;
-    padding: 5px;
-    margin-left:60vw;
+    font-size: 1.6vh;
+    color: #ff4d00;
+    text-align: right;
+    padding:2.5vw;
   }
   .sex {
     display: inline-block;
-    width:30%;
+    width:20%;
     text-align: left;
   }
   .el-radio {
-    text-align:left;
+    display: inline-block;
+    width: 7vw;
+    margin-right:10px;
+  }
+  .el-radio.is-bordered + .el-radio.is-bordered {
+    margin:0
+  }
+  .el-radio-group {
+    width:25vw;
+    text-align: left;
+    margin: 0 0 0 2.25vw;
+  }
+  .header {
+    font-family: 'lixuke';
+    text-align: center;
+    font-size:2vw;
+    padding-top:2.25vw;
+    margin:0
+  }
+  .entryBtn {
+    text-align: center;
+    padding-top: 2.25vw;
   }
 </style>
 

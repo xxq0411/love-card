@@ -36,8 +36,9 @@ export default {
   font-size: 3vw;
 }
 .el-button {
+  font-family: 'lixuke';
   text-align: center;
-  font-size:1vw;
+  font-size:1.3vw;
   width:5vw;
   height: 5vw;
   margin: 2vw
@@ -47,4 +48,11 @@ footer {
   bottom: -50vh;
   font-size:0.5vw;
 }
+</style>
+
+<style>
+  @font-face {
+    font-family: 'lixuke';
+    src: url(/static/font/lixuke.ttf) format('truetype');
+  }
 </style>

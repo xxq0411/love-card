@@ -38,10 +38,6 @@ export default {
         })
         this.delCard(CardID)
       }).catch(() => {
-        this.$message({
-          type: 'info',
-          message: '不删除了'
-        })
       })
     },
     delCard (CardID) {

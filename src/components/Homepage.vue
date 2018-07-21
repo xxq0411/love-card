@@ -1,33 +1,55 @@
 <template>
   <div class="homepage">
     <el-container>
-      <el-header>
-        <h1 class="greet">Hello {{userName}}</h1>
-        <router-link to="/changeInfo" tag="p">
-          <i class="el-icon-arrow-right">  修改个人信息</i>
-        </router-link>
+      <el-header style="text-align: right; font-size: 12px">
+        <el-dropdown>
+          <i class="el-icon-setting" style="margin-right: 15px"></i>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>
+              <router-link to="/changeInfo" tag="span">
+                修改个人信息
+              </router-link>
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+        <span>Hello {{userName}}</span>
       </el-header>
       <el-container>
-        <el-aside width="200px">
-          <el-col :span="12" class="el-col">
-            <h5>卡片库</h5>
-            <el-menu class="el-menu-vertical-demo">
-              <router-link to="/homepage/creat" tag="li">
-                <el-menu-item index="1">
-                  <span slot="title">新建卡片</span>
-                </el-menu-item>
-              </router-link>
-              <el-menu-item index="2">
-                <span slot="title"><router-link to="/homepage/dispatch" tag="li">派发卡片</router-link></span>
-              </el-menu-item>
-              <el-menu-item index="3">
-                <span slot="title"><router-link to="/homepage/own" tag="li">已有卡片</router-link></span>
-              </el-menu-item>
-              <el-menu-item index="4">
-                <span slot="title"><router-link to="/homepage/use" tag="li">使用卡片</router-link></span>
-              </el-menu-item>
-            </el-menu>
-          </el-col>
+        <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+          <el-menu>
+            <el-menu-item index="1">
+              <template slot="title">
+                <i class="el-icon-message"></i>
+                <router-link to="/homepage/creat" tag="span">
+                  新建卡模
+                </router-link>
+              </template>
+            </el-menu-item>
+            <el-menu-item index="2">
+              <template slot="title">
+                <i class="el-icon-menu"></i>
+                <router-link to="/homepage/dispatch" tag="span">
+                  派发卡片
+                </router-link>
+              </template>
+            </el-menu-item>
+            <el-menu-item index="3">
+              <template slot="title">
+                <i class="el-icon-setting"></i>
+                <router-link to="/homepage/own" tag="span">
+                  卡模库
+                </router-link>
+              </template>
+            </el-menu-item>
+            <el-menu-item index="4">
+              <template slot="title">
+                <i class="el-icon-setting"></i>
+                <router-link to="/homepage/use" tag="span">
+                  我的卡片
+                </router-link>
+              </template>
+            </el-menu-item>
+          </el-menu>
         </el-aside>
         <el-main>
           <router-view></router-view>

@@ -8,10 +8,10 @@
             <el-input v-model="userName"></el-input>
           </el-form-item>
           <el-form-item>
-            <span class="label">性别：</span>
+            <span class="label">你是：</span>
             <el-radio-group v-model="gender">
-              <el-radio :label="0">雄性</el-radio>
-              <el-radio :label="1">雌性</el-radio>
+              <el-radio :label="1">小仙女</el-radio>
+              <el-radio :label="0">小狼狗</el-radio>
             </el-radio-group>
           </el-form-item>
           <el-form-item>

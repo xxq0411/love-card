@@ -10,10 +10,10 @@
         <el-input v-model="email" placeholder="请输入邮箱"></el-input>
       </div>
       <div>
-        <span>雌雄：</span>
+        <span>你是：</span>
         <el-radio-group v-model="gender" class="sex">
-          <el-radio :label="1" border>雌性</el-radio>
-          <el-radio :label="0" border>雄性</el-radio>
+          <el-radio :label="1" border>小仙女</el-radio>
+          <el-radio :label="0" border>小狼狗</el-radio>
         </el-radio-group>
       </div>
       <div>
@@ -81,7 +81,7 @@ export default {
   .from {
     margin:0 auto;
     width: 30vw;
-    height:75vh;
+    height:85vh;
     background: #fbbebb;
     border-radius: 20px;
     text-align: left
@@ -137,6 +137,12 @@ export default {
   .entryBtn {
     text-align: center;
     padding-top: 2.25vw;
+  }
+  .from > div {
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
   }
 </style>
 

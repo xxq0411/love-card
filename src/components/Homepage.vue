@@ -1,7 +1,7 @@
 <template>
   <div class="homepage">
     <el-container>
-      <el-header style="text-align: right; font-size: 12px">
+      <el-header style="text-align: right; font-size: 12px;height:12vh">
         <el-dropdown>
           <i class="el-icon-setting" style="margin-right: 15px"></i>
           <el-dropdown-menu slot="dropdown">
@@ -15,7 +15,7 @@
         <span>Hello {{userName}}</span>
       </el-header>
       <el-container>
-        <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+        <el-aside width="200px">
           <el-menu>
             <el-menu-item index="1">
               <template slot="title">
@@ -85,6 +85,21 @@ export default {
   cursor: pointer;
 }
 .el-header {
-  margin-bottom: 30px
+  background-color: #383e4b;
+  width: 100vw;
+  height:20vh;
 }
+.el-aside {
+  height: 100vh;
+  background-color: #383e4b;
+}
+</style>
+
+<style>
+  #app {
+    margin-top: 0;
+  }
+  #body {
+    margin: 0;
+  }
 </style>

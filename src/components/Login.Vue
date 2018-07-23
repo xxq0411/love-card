@@ -91,7 +91,7 @@ export default {
 .from {
   margin:0 auto;
   width: 30vw;
-  height:60vh;
+  height:52vh;
   background: #fbbebb;
   border-radius: 20px;
   text-align: left

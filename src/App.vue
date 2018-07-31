@@ -81,7 +81,7 @@ body {
   background: #fbbebb
 }
 .blue {
-  background: #c5e5e0
+  background: #bcdbd7
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

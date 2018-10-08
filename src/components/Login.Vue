@@ -56,7 +56,7 @@ export default {
         .then(function (res) {
           if (res.data.code === 0) {
             _this.$store.commit('updateUser', res.data.data)
-            _this.$router.push({path: '/homepage'})
+            _this.$router.push({path: '/homepage/dispatch'})
             localStorage.setItem('token', res.data.token)
             _this.getCards()
           }

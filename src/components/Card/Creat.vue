@@ -1,6 +1,6 @@
 <template>
   <div class="creat">
-    <h1>新建卡片</h1>
+    <h1>新建卡模</h1>
     <div class="cardName">
       <span class="label">卡片名：</span>
       <el-input v-model="creatCardName" autofocus="true" clearable></el-input>
@@ -13,7 +13,6 @@
     <el-button round @click="creatNewCard">创建</el-button>
   </div>
 </template>
-
 <script>
 export default {
   data () {

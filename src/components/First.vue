@@ -3,7 +3,7 @@
     <h1 class="appName">欢迎进入{{$store.state.appName}}</h1>
     <el-button @click="toRegister" circle class="circleBtn" style="padding:0px">去注册</el-button>
     <el-button @click="toLogin" circle class="circleBtn" style="padding:0px">有账号</el-button>
-    <footer>此项目由DA与Hua共同开发，有项目方面的问题欢迎关注github账号xch1029</footer>
+    <footer>此项目由DA开发，有项目方面的问题欢迎关注github账号xxq0411</footer>
   </div>
 </template>
 

@@ -10,8 +10,8 @@
           <el-form-item>
             <span class="label">你是：</span>
             <el-radio-group v-model="gender">
-              <el-radio :label="1">小仙女</el-radio>
-              <el-radio :label="0">小狼狗</el-radio>
+              <el-radio :label="1">小姐姐</el-radio>
+              <el-radio :label="0">小哥哥</el-radio>
             </el-radio-group>
           </el-form-item>
           <el-form-item>
@@ -29,7 +29,7 @@
         </el-form>
       </el-form>
       <div class="backT0HomePage">
-        <router-link to='/Homepage' class="backToFirst">
+        <router-link to='/Homepage/dispatch' class="backToFirst">
           <i class="el-icon-back">回首页</i>
         </router-link>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="own">
-    <h1>卡片展示</h1>
+    <h1>我的卡片</h1>
     <el-card v-for="card in cards" :key="card.id" class="box-card">
       <div slot="header">
         <span class="cardName">卡片名称:{{card.name}}</span>

@@ -3,26 +3,26 @@
       <h1>修改个人信息</h1>
       <el-form ref="form">
         <el-form ref="form">
-          <el-form-item>
+          <el-form-item class="formel-name">
             <span class="label">昵称：</span>
             <el-input v-model="userName"></el-input>
           </el-form-item>
-          <el-form-item>
+          <el-form-item class="formel-name">
             <span class="label">你是：</span>
             <el-radio-group v-model="gender">
-              <el-radio :label="1">小姐姐</el-radio>
+              <el-radio :label="1" class="genders">小姐姐</el-radio>
               <el-radio :label="0">小哥哥</el-radio>
             </el-radio-group>
           </el-form-item>
-          <el-form-item>
+          <el-form-item class="formel-name">
             <span class="label">住址：</span>
             <el-input v-model="address"></el-input>
           </el-form-item>
-          <el-form-item>
+          <el-form-item class="formel-name">
             <span class="label">手机号码：</span>
             <el-input v-model="phone"></el-input>
           </el-form-item>
-          <el-form-item>
+          <el-form-item class="formel-name">
             <el-button type="primary" @click="onSubmit">确认</el-button>
             <el-button @click="cancel">取消</el-button>
           </el-form-item>
@@ -119,9 +119,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .changeInfo {
-  padding: 20px
+  padding: 20px;
+  font-family: 'lixuke';
 }
 .el-input {
   width: 30%;
@@ -129,9 +130,32 @@ export default {
 }
 .label {
   display:inline-block;
-  width:80px
+  width:8vw;
+  font-size:1.5vw;
 }
 .el-icon-back {
   color: #FF4D00
 }
+.el-radio__label{
+    font-size: 1.5vw;
+    padding-left: 10px;
+}
+.formel-name .el-form-item__content {
+  width: 30vw;
+  padding: 5px;
+  margin: 0 auto;
+  display:flex;
+  justify-content:space-around;
+  align-items: center;
+}
+.formel-name .el-form-item__content .el-input {
+  width: 22vw;
+}
+</style>
+
+<style scoped>
+  @font-face {
+    font-family: 'lixuke';
+    src: url(/static/font/lixuke.ttf) format('truetype');
+  }
 </style>

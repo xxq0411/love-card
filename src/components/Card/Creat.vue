@@ -1,6 +1,6 @@
 <template>
   <div class="creat">
-    <h1>新建卡模</h1>
+    <h1 class="title">新建卡模</h1>
     <div class="cardName">
       <span class="label">卡片名：</span>
       <el-input v-model="creatCardName" autofocus="true" clearable></el-input>
@@ -60,18 +60,42 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: 'lixuke';
+  src: url(/static/font/lixuke.ttf) format('truetype');
+}
+.creat {
+  font-family: 'lixuke'
+}
+.title {
+  font-size: 2vw;
+  padding-left: 66px;
+}
 .el-input {
   width: 30%;
   padding:5px
 }
 .label {
+  font-size:1vw;
+  font-weight: 600;
   display:inline-block;
-  width:80px
+  width:6vw;
 }
 .textarea {
   width: 30%
 }
+.cardName {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
 .cardDiscribe {
-  margin: 50px 0
+  margin: 50px 0;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.el-button {
+  padding-left: 66px;
 }
 </style>

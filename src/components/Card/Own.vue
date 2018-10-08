@@ -1,14 +1,14 @@
 <template>
   <div class="own">
-    <h1>我的卡片</h1>
+    <h1 class="owe-title">我的卡片</h1>
     <el-card v-for="card in cards" :key="card.id" class="box-card">
       <div slot="header">
-        <span class="cardName">卡片名称:{{card.name}}</span>
-        <el-button style="float: right; padding: 0" type="text" @click="ConfirmIfDel(card.id)">删除</el-button>
+        <span class="cardName">卡片名称: {{card.name}}</span>
       </div>
       <div class="text item">
         {{'列表内容: ' + card.msg }}
       </div>
+      <div class="destroyWrapper"><el-button class="destroy" @click="ConfirmIfDel(card.id)">删除</el-button></div>
     </el-card>
   </div>
 </template>
@@ -68,11 +68,19 @@ export default {
 </script>
 
 <style scoped>
+  @font-face {
+    font-family: 'lixuke';
+    src: url(/static/font/lixuke.ttf) format('truetype');
+  }
   .own {
+    font-family: 'lixuke';
     text-align: center
   }
+  .owe-title {
+    font-size: 2vw
+  }
   .text {
-    font-size: 14px;
+    font-size: 1.5vw;
     text-align: left;
     overflow: auto;
     word-break: break-all
@@ -86,8 +94,24 @@ export default {
     width: 25vw;
     min-height: 30vh;
     margin: 5px 5px;
+    position: relative;
   }
   .cardName {
+    font-size: 1.5vw;
     word-break: break-all
+  }
+  .el-button--text {
+    padding: 0 !important;
+  }
+  .destroy {
+    margin: 0;
+    width:100%;
+    position: absolute;
+    bottom:0;
+    left: 0;
+    border: none;
+    border-top: 1px solid #dcdfe6;
+    border-radius: 0;
+    font-size:0.8vw;
   }
 </style>

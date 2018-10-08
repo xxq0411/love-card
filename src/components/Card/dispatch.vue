@@ -37,7 +37,7 @@
     -webkit-transition: all 1s;
     -o-transition: all 1s;
   }
-  .content:hover {
+  .dispatch:hover .content {
     width:20vw;
     height: 20vw;
     border-radius: 5%;

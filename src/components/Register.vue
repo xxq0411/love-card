@@ -147,6 +147,9 @@ export default {
   .el-button {
     padding: 12px 20px !important;
   }
+  .el-radio__label {
+    font-size: 1.0vw !important;
+}
 </style>
 
 <style>

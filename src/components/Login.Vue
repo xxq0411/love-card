@@ -129,4 +129,7 @@ export default {
   text-align: center;
   padding-top: 2.25vw;
 }
+.el-button {
+  padding: 12px 20px !important;
+}
 </style>

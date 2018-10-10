@@ -145,7 +145,7 @@ export default {
     -webkit-margin-end: 0px;
   }
   .el-button {
-    padding: 12px 20px;
+    padding: 12px 20px !important;
   }
 </style>
 

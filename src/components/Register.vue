@@ -119,6 +119,9 @@ export default {
     width: 7vw;
     margin-right:10px;
   }
+  .el-radio.is-bordered{
+    border: none !important;
+  }
   .el-radio.is-bordered + .el-radio.is-bordered {
     margin:0
   }
@@ -147,8 +150,9 @@ export default {
   .el-button {
     padding: 12px 20px !important;
   }
-  .el-radio__label {
-    font-size: 1.0vw !important;
+  .el-radio__label{
+    font-size: 1.5vw;
+    padding-left: 10px;
 }
 </style>
 

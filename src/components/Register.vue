@@ -151,7 +151,7 @@ export default {
     padding: 12px 20px !important;
   }
   .el-radio__label{
-    font-size: 1.0vw;
+    font-size: 1.0vw !important;
     padding-left: 10px;
 }
 </style>

@@ -81,7 +81,7 @@ export default {
   .from {
     margin:0 auto;
     width: 30vw;
-    height:75vh;
+    height:78vh;
     background: #fbbebb;
     border-radius: 20px;
     text-align: left
@@ -143,6 +143,9 @@ export default {
     -webkit-margin-after: 1em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
+  }
+  .el-button {
+    padding: 12px 20px;
   }
 </style>
 

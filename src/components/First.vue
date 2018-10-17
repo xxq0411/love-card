@@ -4,7 +4,7 @@
     <el-button @click="toRegister" circle class="circleBtn" style="padding:0px">去注册</el-button>
     <el-button @click="toLogin" circle class="circleBtn" style="padding:0px">有账号</el-button>
     <footer class="userAttention"><strong>用户请注意:</strong></footer>
-    <footer>初始账号：123；密码：123123，直接点击<strong>有账号</strong>按钮登录，也可自行注册.登录后可进入修改个人信息页面完善昵称、地址、手机号等个人信息，页面会根据性别进行不同的主题显示。</footer>
+    <footer>初始账号：123；密码：123123，直接点击<strong>有账号</strong>按钮登录（建议chrome浏览器），也可自行注册.登录后可进入修改个人信息页面完善昵称、地址、手机号等个人信息，页面会根据性别进行不同的主题显示。</footer>
   </div>
 </template>
 
@@ -53,8 +53,8 @@ footer {
   font-size:1vw;
 }
 .userAttention {
-  font-size: 1.5vw;
-  padding:10px;
+  font-size: 1.2vw;
+  padding-bottom:5px;
 }
 </style>
 

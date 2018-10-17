@@ -12,8 +12,8 @@
       <div>
         <span>你是：</span>
         <el-radio-group v-model="gender" class="sex">
-          <el-radio :label="1" border class="sex1">小姐姐</el-radio>
-          <el-radio :label="0" border class="sex1">小哥哥</el-radio>
+          <el-radio :label="1" border class="sex1" style="font-size:1vw">小姐姐</el-radio>
+          <el-radio :label="0" border class="sex1" style="font-size:1vw">小哥哥</el-radio>
         </el-radio-group>
       </div>
       <div>

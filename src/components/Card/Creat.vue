@@ -95,6 +95,8 @@ export default {
   align-items: center;
   justify-content: center;
 }
+</style>
+<style scoped>
 .el-button {
   padding-left: 66px;
 }
